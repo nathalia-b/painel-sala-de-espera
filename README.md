@@ -1,0 +1,1 @@
+# painel-sala-de-espera
