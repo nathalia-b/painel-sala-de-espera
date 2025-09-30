@@ -1,11 +1,13 @@
 import { Component, signal } from '@angular/core';
+import { PainelComponent } from './componentes/painel/painel-component';
+import { InfoBar } from './componentes/info-bar/info-bar';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [PainelComponent, InfoBar],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('painel-espera');
+  protected readonly title = signal('Clinica validações - JFS (MATRIZ)');
 }
