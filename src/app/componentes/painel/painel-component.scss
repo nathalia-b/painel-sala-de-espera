@@ -2,5 +2,12 @@
   background-color: var(--neutral-2);
   border-radius: var(--borderRadius);
   box-shadow: var(--boxShadow);
-  padding: 15px;
+  padding: 20px;
+}
+
+.side-content-column {
+  background-color: var(--neutral-1);
+  border-radius: var(--borderRadius);
+  padding: 20px;
+  box-shadow: var(--boxShadow);
 }
