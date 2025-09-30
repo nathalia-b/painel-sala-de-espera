@@ -1,6 +1,49 @@
-.side-content-column {
-  background-color: #ecf0f1;
-  border-radius: var(--borderRadius);
-  padding: 20px;
-  box-shadow: var(--boxShadow);
+@use '../painel/painel-component.scss';
+
+.card {
+  background-color: var(--neutral-3);
+
+  position: fixed;
+
+  max-width: min-content;
+
+  width: fit-content;
+
+  height: fit-content;
+
+  color: white;
+}
+
+.dados {
+  display: flex;
+
+  width: 100%;
+
+  margin-top: 10px;
+
+  flex-direction: column;
+
+  align-content: center;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: max-content;
+}
+
+.guiche {
+  padding: 15px;
+
+  margin-top: 10rem;
+
+  width: 100%;
+
+  font-size: xx-large;
+
+  font-weight: bolder;
+
+  align-self: center;
+
+  background-color: var(--secondary);
 }

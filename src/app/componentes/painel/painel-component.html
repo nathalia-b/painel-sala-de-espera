@@ -1,6 +1,20 @@
+<button (click)="simularNovaChamada()">SIMULAR CHAMADA (TESTE)</button>
+
 <div class="painel-container p-7 flex">
-  <app-player class="player-principal w-9/12"> </app-player>
+   
+  <div class="card w-9/12">
+        <app-player></app-player>
+
+     
+  </div>
+
+   
   <div class="side-content-column ml-5 w-3/12">
+       
     <h1 class="font-bold text-lg">CHAMADAS</h1>
+
+        <app-chamada *ngIf="emChamada" [dadosChamada]="chamadaAtual"></app-chamada>
+
+     
   </div>
 </div>

@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-chamada',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './chamada-component.html',
   styleUrl: './chamada-component.scss',
 })
-export class ChamadaComponent {}
+export class ChamadaComponent {
+  @Input() dadosChamada: any;
+}

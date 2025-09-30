@@ -1,1 +1,10 @@
-<div class="side-content-column ml-5"></div>
+<div class="">
+  <div *ngIf="dadosChamada" class="card w-full chamada-destaque">
+    <p>CHAMADA</p>
+    <div class="dados">
+      <h1 class="senha text-9xl">{{ dadosChamada.senha }}</h1>
+      <p class="nome">{{ dadosChamada.nome }}</p>
+      <p class="guiche text-center">{{ dadosChamada.guiche }}</p>
+    </div>
+  </div>
+</div>
