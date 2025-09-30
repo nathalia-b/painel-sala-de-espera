@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-chamada-component',
+  selector: 'app-chamada',
   imports: [],
   templateUrl: './chamada-component.html',
-  styleUrl: './chamada-component.scss'
+  styleUrl: './chamada-component.scss',
 })
-export class ChamadaComponent {
-
-}
+export class ChamadaComponent {}
