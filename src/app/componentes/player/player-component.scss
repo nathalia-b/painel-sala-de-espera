@@ -1,0 +1,17 @@
+.video-wrapper {
+  position: relative;
+  border-radius: var(--borderRadius);
+  padding-top: 56.25%;
+  background-color: var(--playerContainer);
+  box-shadow: var(--boxShadow);
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  display: block;
+  border-radius: 20px;
+}
