@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { PlayerComponent } from '../player/player-component';
 import { CommonModule } from '@angular/common';
 import { ChamadaComponent } from '../chamada/chamada-component';
-import { Ficha } from '../ficha/ficha';
+import { FichaComponent } from '../ficha/ficha-component';
 
 @Component({
   selector: 'app-painel',
   standalone: true,
-  imports: [CommonModule, PlayerComponent, ChamadaComponent, Ficha],
+  imports: [CommonModule, PlayerComponent, ChamadaComponent, FichaComponent],
   templateUrl: './painel-component.html',
   styleUrl: './painel-component.scss',
 })

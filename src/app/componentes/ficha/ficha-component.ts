@@ -12,10 +12,10 @@ export interface Dados {
 @Component({
   selector: 'app-ficha',
   imports: [CommonModule],
-  templateUrl: './ficha.html',
-  styleUrl: './ficha.scss',
+  templateUrl: './ficha-component.html',
+  styleUrl: './ficha-component.scss',
 })
-export class Ficha {
+export class FichaComponent {
   //  Recebe se a chamada é a atual
   @Input() chamadaAtual: boolean = false;
 
