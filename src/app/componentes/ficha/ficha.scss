@@ -1,0 +1,18 @@
+.senha {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-left: 4px solid var(--secondary);
+  border-radius: var(--borderRadius);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  h1 {
+    font-weight: bold;
+  }
+
+  &.atual {
+    background-color: var(--secondary);
+    color: #fff;
+  }
+}
