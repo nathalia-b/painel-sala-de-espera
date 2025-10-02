@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { App } from '../../app';
 
 @Component({
   selector: 'app-info-bar',
@@ -10,5 +9,5 @@ import { App } from '../../app';
 })
 export class InfoBar {
   dataAtual: Date = new Date();
-  protected readonly title = 'Clinica validações - JFS (MATRIZ)';
+  protected readonly title = 'CLÍNICA VALIDAÇÕES - JFS (MATRIZ)';
 }
