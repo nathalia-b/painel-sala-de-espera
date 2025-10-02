@@ -1,20 +1,30 @@
-<button (click)="simularNovaChamada()">SIMULAR CHAMADA (TESTE)</button>
+<div class="painel-container px-7 py-7 flex h-screen relative">
+  <app-player
+    class="transition-all duration-800 ease-in-out absolute transform z-10"
+    [ngClass]="{
+      'w-[69%] h-[80%] top-[10%] left-[2.5%] scale-100': !emChamada,
+      'w-[20%] h-[30%] bottom-10 right-7 scale-100': emChamada
+    }"
+  ></app-player>
 
-<div class="painel-container p-7 flex">
-   
-  <div class="card w-9/12">
-        <app-player></app-player>
-
-     
+  <div class="card w-9/12 relative overflow-hidden h-full">
+    <app-chamada
+      class="transition-all duration-800 ease-in-out absolute top-0 left-0 w-full h-full transform"
+      [dadosChamada]="chamadaAtual"
+      [ngClass]="{
+        'opacity-0 scale-95 invisible': !emChamada,
+        'opacity-100 scale-100 visible': emChamada
+      }"
+    ></app-chamada>
   </div>
 
-   
-  <div class="side-content-column ml-5 w-3/12">
-       
-    <h1 class="font-bold text-lg">CHAMADAS</h1>
-
-        <app-chamada *ngIf="emChamada" [dadosChamada]="chamadaAtual"></app-chamada>
-
-     
-  </div>
+  <div class="side-content-column ml-5 w-3/12 px-5 py-2"></div>
+  <button
+    type="button"
+    id="botaoSimular"
+    class="w-9 h-9 text-xs text-white font-medium fixed mb-5 rounded-lg"
+    (click)="simularNovaChamada()"
+  >
+    <span class="material-icons">notifications_active</span>
+  </button>
 </div>

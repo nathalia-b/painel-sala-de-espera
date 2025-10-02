@@ -8,6 +8,21 @@
 .side-content-column {
   background-color: var(--neutral-1);
   border-radius: var(--borderRadius);
-  padding: 20px;
+  overflow: auto;
+
+  height: 100%;
+  display: flex;
   box-shadow: var(--boxShadow);
+  flex-direction: column;
+}
+
+#botaoSimular {
+  cursor: pointer;
+  bottom: 0;
+  background-color: var(--secondary);
+  opacity: 0.3;
+  &:hover {
+    transition: 0.3s;
+    opacity: 1;
+  }
 }
