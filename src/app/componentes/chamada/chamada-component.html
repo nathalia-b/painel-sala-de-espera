@@ -1,10 +1,8 @@
-<div class="">
-  <div *ngIf="dadosChamada" class="card w-full chamada-destaque">
-    <p>CHAMADA</p>
-    <div class="dados">
-      <h1 class="senha text-9xl">{{ dadosChamada.senha }}</h1>
-      <p class="nome">{{ dadosChamada.nome }}</p>
-      <p class="guiche text-center">{{ dadosChamada.guiche }}</p>
-    </div>
+<div *ngIf="dadosChamada" class="card w-full justify-between" id="chamadaDestaque">
+  <p id="tituloCard" class="self-start font-semibold">CHAMADA</p>
+  <div class="dados">
+    <h1 id="senha" class="text-9xl">{{ dadosChamada.senha }}</h1>
+    <p id="nome" class="text-3xl">{{ dadosChamada.nome }}</p>
   </div>
+  <p id="guiche" class="text-center">{{ dadosChamada.guiche }}</p>
 </div>
