@@ -3,7 +3,7 @@
     class="transition-all duration-800 ease-in-out absolute transform z-10"
     [ngClass]="{
       'w-[69%] h-[80%] top-[10%] left-[2.5%] scale-100': !emChamada,
-      'w-[20%] h-[30%] bottom-10 right-7 scale-100': emChamada
+      'w-[23%] h-[35%] bottom-10 right-10 scale-100 mini': emChamada
     }"
   ></app-player>
 
@@ -20,18 +20,18 @@
 
   <div class="side-content-column ml-5 w-3/12 px-5 py-2">
     <div class="header flex justify-between w-full">
-      <h1 class="font-bold text-lg mb-2">CHAMADAS</h1>
+      <h1 class="font-bold text-xl mb-2">CHAMADAS</h1>
       <span class="material-icons w-[25px] ml-auto">volume_up</span>
       <span class="material-icons w-[25px] ml-2">crop_free</span>
     </div>
-    <h2 class="font-bold text-lg mb-3" *ngIf="chamadaAtual">SENHA ATUAL</h2>
+    <h2 class="font-semibold mb-3" *ngIf="chamadaAtual">SENHA ATUAL</h2>
 
-    <div class="mb-4" *ngIf="chamadaAtual">
+    <div class="mb-3" *ngIf="chamadaAtual">
       <app-ficha [dadosSenha]="chamadaAtual" [chamadaAtual]="true"></app-ficha>
     </div>
 
-    <h2 class="font-bold text-lg mb-3" *ngIf="historico.length > 0">HISTÓRICO</h2>
-    <div class="historico">
+    <h2 class="font-semibold text-md mb-3" *ngIf="historico.length > 0">HISTÓRICO DE CHAMADAS</h2>
+    <div class="historico mb-4">
       <ng-container *ngIf="historico.length > 0">
         <app-ficha *ngFor="let senha of historico" [dadosSenha]="senha"></app-ficha>
       </ng-container>

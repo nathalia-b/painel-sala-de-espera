@@ -12,6 +12,7 @@
   --borderRadius: 5px;
   --boxShadow: 0px 0px 9px 0px rgb(120 120 120 / 33%);
 }
+
 html {
   width: -webkit-fill-available;
   color: var(--textColorLighter);
@@ -31,5 +32,12 @@ html {
 
   app-root {
     height: 100vh;
+  }
+}
+
+app-player.mini {
+  .video-wrapper {
+    background-color: transparent;
+    box-shadow: none;
   }
 }
