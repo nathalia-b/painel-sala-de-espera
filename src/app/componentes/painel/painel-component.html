@@ -1,12 +1,18 @@
-<div class="painel-container px-7 py-7 flex h-screen relative">
+<div class="painel-container px-7 pt-7 pt-3 flex h-screen relative">
+  <!-- Componente do player. O posicionamento e dimensionamento são controlados dinamicamente com base no estado. 
+      Se estiver em estado de chamada (emChamada) -> O vídeo encolhe e vai para canto inferior direito. 
+      Caso contrário -> Ocupa a área central esquerda -->
   <app-player
     class="transition-all duration-800 ease-in-out absolute transform z-10"
     [ngClass]="{
-      'w-[69%] h-[80%] top-[10%] left-[2.5%] scale-100': !emChamada,
-      'w-[23%] h-[35%] bottom-10 right-10 scale-100 mini': emChamada
+      'w-[69%] h-[80%] top-[5%] left-[3%] scale-100': !emChamada,
+      'w-[23%] h-[30%] bottom-[2%] right-[2.5%] bottom-10 scale-100 mini': emChamada
     }"
   ></app-player>
 
+  <!-- Componente da chamada em destaque. A visibilidade é controlada também com base no estado.  
+      Se estiver emChamada -> aparece com opacidade e tamanho total.[ngComponentOutlet]=""
+      Caso contrário, esmaece e some suavemente. -->
   <div class="card w-9/12 relative overflow-hidden h-full">
     <app-chamada
       class="transition-all duration-800 ease-in-out absolute top-0 left-0 w-full h-full transform"
@@ -18,31 +24,41 @@
     ></app-chamada>
   </div>
 
-  <div class="side-content-column ml-5 w-3/12 px-5 py-2">
-    <div class="header flex justify-between w-full">
+  <!-- Coluna lateral direita que mostra a chamada atual e o histórico. 
+      Visualmente, abriga o player quando emChamada -->
+  <div class="side-column ml-5 w-3/12 px-5 py-4">
+    <div class="flex justify-between w-full">
       <h1 class="font-bold text-xl mb-2">CHAMADAS</h1>
       <span class="material-icons w-[25px] ml-auto">volume_up</span>
       <span class="material-icons w-[25px] ml-2">crop_free</span>
     </div>
-    <h2 class="font-semibold mb-3" *ngIf="chamadaAtual">SENHA ATUAL</h2>
+
+    <!-- Título "Senha Atual" exibido apenas se houver uma chamada -->
+    <h2 class="font-semibold mb-2 opacity-60" *ngIf="chamadaAtual">SENHA ATUAL</h2>
 
     <div class="mb-3" *ngIf="chamadaAtual">
       <app-ficha [dadosSenha]="chamadaAtual" [chamadaAtual]="true"></app-ficha>
     </div>
 
-    <h2 class="font-semibold text-md mb-3" *ngIf="historico.length > 0">HISTÓRICO DE CHAMADAS</h2>
+    <!-- Título do histórico exibido apenas se houver senhas anteriores -->
+    <h2 class="font-semibold text-md mb-2 opacity-60" *ngIf="historico.length > 0">
+      HISTÓRICO DE CHAMADAS
+    </h2>
+
     <div class="historico mb-4">
       <ng-container *ngIf="historico.length > 0">
+        <!-- Itera sobre o array de chamadas anteriores e exibe uma ficha para cada -->
         <app-ficha *ngFor="let senha of historico" [dadosSenha]="senha"></app-ficha>
       </ng-container>
     </div>
   </div>
 </div>
+
 <button
   type="button"
   id="botaoSimular"
-  class="w-9 h-9 text-xs text-white font-medium fixed mb-5 rounded-lg"
+  class="w-6 h-6 text-xs font-medium rounded-sm right-2"
   (click)="simularNovaChamada()"
 >
-  <span class="material-icons">notifications_active</span>
+  <span class="w-2 h-2 material-icons">notifications</span>
 </button>

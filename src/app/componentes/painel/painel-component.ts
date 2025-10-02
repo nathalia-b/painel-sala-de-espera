@@ -12,28 +12,52 @@ import { Ficha } from '../ficha/ficha';
   styleUrl: './painel-component.scss',
 })
 export class PainelComponent {
-  emChamada: boolean = false;
-  chamadaAtual: any = null;
-  historico: any[] = [];
-  mockPacientes = ['Julio Hebert', 'Raphaela Lima', 'Fábio Luíz', 'Maria João', 'Jane Doe'];
+  emChamada: boolean = false; //  Representação do 'Estado em Chamada'; É iniciado como false.
+  chamadaAtual: any = null; // Dados da chamada em andamento.
+  historico: any[] = []; // Armazena o histórico de chamadas anteriores.
+  // Nomes de pacientes simulados
+  mockPacientes = [
+    'Julio Hebert',
+    'Raphaela Lima',
+    'Fábio Henrique',
+    'Maria Luíza',
+    'Fátima Fernandes',
+  ];
+  mockEspecialidades = ['CG', 'OT']; // Siglas de especialidades simuladas
 
+  //  Método para retornar um elemento aleatório de um array
+  private randomItem<T>(array: T[]): T {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+
+  //  Método que controla o fluxo das chamadas e histórico
   simularNovaChamada(): void {
-    this.emChamada = true;
-
+    // Adiciona a chamada atual ao início do histórico (caso exista)
     if (this.chamadaAtual) {
       this.historico.unshift(this.chamadaAtual);
     }
 
+    // Geração de valores aleatórios para simular a nova chamada
+    const rand = Math.floor(Math.random() * 5);
+    const randEspecialidade = this.randomItem(this.mockEspecialidades);
+
+    // Criação do objeto de chamada atual
     this.chamadaAtual = {
-      senha: 'CG-' + Math.floor(Math.random() * 1000) + 'N',
-      nome: this.mockPacientes[Math.floor(Math.random() * 5)].toUpperCase(),
-      guiche: `Guichê ${Math.floor(Math.random() * 5) + 1}`,
+      senha:
+        randEspecialidade +
+        '-' +
+        Math.floor(Math.random() * 1000) +
+        this.randomItem(this.mockEspecialidades).slice(1),
+      especialidade: randEspecialidade == 'CG' ? 'CLÍNICO GERAL' : 'ORTOPEDISTA',
+      nome: this.randomItem(this.mockPacientes).toUpperCase(),
+      guiche: 'Guichê ' + (rand === 0 ? rand + 1 : rand),
       hora: new Date(),
     };
-
+    // Ativa o estado 'Em chamada'
     this.emChamada = true;
 
-    setTimeout(() => this.finalizarChamada(), 2000);
+    // Define um timeout para finalizar a chamada em destaque após 15 segundos
+    setTimeout(() => this.finalizarChamada(), 15000);
   }
 
   finalizarChamada() {
