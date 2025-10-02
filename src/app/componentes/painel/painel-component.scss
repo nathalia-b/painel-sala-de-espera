@@ -1,28 +1,37 @@
-.side-content-column {
-  background-color: var(--neutral-1);
+.side-column {
+  background-color: white;
   border-radius: var(--borderRadius);
   overflow: auto;
-
   height: 100%;
   display: flex;
   box-shadow: var(--boxShadow);
   flex-direction: column;
 }
+
 .painel-container {
   height: 90vh;
 }
 
+.card {
+  background-color: var(--neutral-2);
+  box-shadow: var(--boxShadow);
+  overflow: hidden;
+}
+
 .historico {
-  height: 29%;
+  height: 39%;
   margin-bottom: 10px;
   overflow: hidden;
 }
 
 #botaoSimular {
+  position: fixed;
+  display: flex;
+  color: #fff;
   cursor: pointer;
   bottom: 0;
   background-color: var(--secondary);
-  opacity: 0.3;
+  opacity: 0.7;
   &:hover {
     transition: 0.3s;
     opacity: 1;

@@ -1,16 +1,21 @@
 @use 'tailwindcss';
 
 :root {
-  --primary: #0b594b;
-  --secondary: #17bfa0;
-  --textColor: #374151;
-  --textColorLighter: #57677f;
+  /* Cores principais */
+  --primary: #0a574f;
+  --secondary: #13b8a7;
+  --chamada-destaque: #324154;
+
+  /* Cores neutras */
   --neutral-0: #f2f2f2;
   --neutral-1: #f3f4f6;
   --neutral-2: #e5e7eb;
-  --neutral-3: #334155;
+  --neutral-3: #374151;
+
+  /* Tipografia & Estilo */
+  --textColor: #57677f;
   --borderRadius: 5px;
-  --boxShadow: 0px 0px 9px 0px rgb(120 120 120 / 33%);
+  --boxShadow: 0px 0px 9px 0px rgba(120, 120, 120, 0.205);
 }
 
 html {
