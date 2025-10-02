@@ -8,5 +8,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './chamada-component.scss',
 })
 export class ChamadaComponent {
+  //  Recebe os dados da chamada atual para poder exibi-los na 'chamada em destaque' que substitui o vídeo.
   @Input() dadosChamada: any;
 }
