@@ -34,23 +34,25 @@
     </div>
 
     <!-- Título "Senha Atual" exibido apenas se houver uma chamada -->
-    <h2 class="font-semibold mb-2 opacity-60" *ngIf="chamadaAtual">SENHA ATUAL</h2>
+    @if (chamadaAtual) {
+    <h2 class="font-semibold mb-2 opacity-60">SENHA ATUAL</h2>
 
-    <div class="mb-3" *ngIf="chamadaAtual">
+    <div class="mb-3">
       <app-ficha [dadosSenha]="chamadaAtual" [chamadaAtual]="true"></app-ficha>
     </div>
+    }
 
     <!-- Título do histórico exibido apenas se houver senhas anteriores -->
-    <h2 class="font-semibold text-md mb-2 opacity-60" *ngIf="historico.length > 0">
-      HISTÓRICO DE CHAMADAS
-    </h2>
+    @if (historico.length > 0) {
+    <h2 class="font-semibold text-md mb-2 opacity-60">HISTÓRICO DE CHAMADAS</h2>
 
     <div class="historico mb-4">
-      <ng-container *ngIf="historico.length > 0">
-        <!-- Itera sobre o array de chamadas anteriores e exibe uma ficha para cada -->
-        <app-ficha *ngFor="let senha of historico" [dadosSenha]="senha"></app-ficha>
-      </ng-container>
+      <!-- Itera sobre o array de chamadas anteriores e exibe uma ficha para cada -->
+      @for (senha of historico; track senha) {
+      <app-ficha [dadosSenha]="senha"></app-ficha>
+      }
     </div>
+    }
   </div>
 </div>
 
