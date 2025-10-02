@@ -15,6 +15,15 @@
   box-shadow: var(--boxShadow);
   flex-direction: column;
 }
+.painel-container {
+  height: 90vh;
+}
+
+.historico {
+  height: 30%;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
 
 #botaoSimular {
   cursor: pointer;

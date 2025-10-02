@@ -9,5 +9,5 @@ import { InfoBar } from './componentes/info-bar/info-bar';
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('Clinica validações - JFS (MATRIZ)');
+  protected readonly title = signal('Clínica validações - JFS (MATRIZ)');
 }

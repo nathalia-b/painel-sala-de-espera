@@ -18,13 +18,31 @@
     ></app-chamada>
   </div>
 
-  <div class="side-content-column ml-5 w-3/12 px-5 py-2"></div>
-  <button
-    type="button"
-    id="botaoSimular"
-    class="w-9 h-9 text-xs text-white font-medium fixed mb-5 rounded-lg"
-    (click)="simularNovaChamada()"
-  >
-    <span class="material-icons">notifications_active</span>
-  </button>
+  <div class="side-content-column ml-5 w-3/12 px-5 py-2">
+    <div class="header flex justify-between w-full">
+      <h1 class="font-bold text-lg mb-2">CHAMADAS</h1>
+      <span class="material-icons w-[25px] ml-auto">volume_up</span>
+      <span class="material-icons w-[25px] ml-2">crop_free</span>
+    </div>
+    <h2 class="font-bold text-lg mb-3" *ngIf="chamadaAtual">SENHA ATUAL</h2>
+
+    <div class="mb-4" *ngIf="chamadaAtual">
+      <app-ficha [dadosSenha]="chamadaAtual" [chamadaAtual]="true"></app-ficha>
+    </div>
+
+    <h2 class="font-bold text-lg mb-3" *ngIf="historico.length > 0">HISTÓRICO</h2>
+    <div class="historico">
+      <ng-container *ngIf="historico.length > 0">
+        <app-ficha *ngFor="let senha of historico" [dadosSenha]="senha"></app-ficha>
+      </ng-container>
+    </div>
+  </div>
 </div>
+<button
+  type="button"
+  id="botaoSimular"
+  class="w-9 h-9 text-xs text-white font-medium fixed mb-5 rounded-lg"
+  (click)="simularNovaChamada()"
+>
+  <span class="material-icons">notifications_active</span>
+</button>
