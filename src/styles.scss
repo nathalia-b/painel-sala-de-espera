@@ -46,3 +46,7 @@ app-player.mini {
     box-shadow: none;
   }
 }
+
+.will-change-transform {
+  will-change: transform, opacity;
+}

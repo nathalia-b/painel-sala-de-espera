@@ -3,7 +3,7 @@
       Se estiver em estado de chamada (emChamada) -> O vídeo encolhe e vai para canto inferior direito. 
       Caso contrário -> Ocupa a área central esquerda -->
   <app-player
-    class="transition-all duration-800 ease-in-out absolute transform z-10"
+    class="transition-all duration-800 ease-in-out absolute transform z-10 will-change-transform"
     [ngClass]="{
       'w-[69%] h-[80%] top-[5%] left-[3%] scale-100': !emChamada,
       'w-[23%] h-[28%] bottom-[2%] right-[2.5%] bottom-10 scale-100 mini': emChamada
@@ -18,8 +18,8 @@
       class="transition-all duration-800 ease-in-out absolute top-0 left-0 w-full h-full transform"
       [dadosChamada]="chamadaAtual"
       [ngClass]="{
-        'opacity-0 scale-95 invisible': !emChamada,
-        'opacity-100 scale-100 visible': emChamada
+        'opacity-0 scale-95 z-0': !emChamada,
+        'opacity-100 scale-100 z-20': emChamada
       }"
     ></app-chamada>
   </div>
@@ -50,7 +50,7 @@
     @if (historico.length > 0) {
     <h2 class="font-semibold text-md mb-2 opacity-60">HISTÓRICO DE CHAMADAS</h2>
 
-    <div class="historico mb-4">
+    <div class="historico mb-4 h-[42%]">
       <!-- Itera sobre o array de chamadas anteriores e exibe uma ficha para cada -->
       @for (senha of historico; track senha) {
       <app-ficha [dadosSenha]="senha"></app-ficha>
