@@ -1,7 +1,13 @@
-<div class="senha mb-2 p-2 bg-gray-100 rounded" [class.atual]="chamadaAtual">
+<div
+  class="senha mb-2 p-2 bg-gray-100 rounded text-sm flex-wrap md:flex-nowrap"
+  [class.atual]="chamadaAtual"
+>
   <div class="left">
     <h1>{{ dadosSenha?.senha }}</h1>
-    <h2>{{ nomeFormatado }} - {{ dadosSenha?.especialidade }}</h2>
+    <h2 class="mr-2">
+      {{ formatarString(dadosSenha?.nome) }} -
+      {{ formatarString(dadosSenha?.especialidade) }}
+    </h2>
   </div>
   <div class="right">
     <h1>{{ dadosSenha?.hora | date : 'shortTime' }}</h1>

@@ -22,17 +22,21 @@ export class FichaComponent {
   //  Recebe os dados da chamada feita
   @Input() dadosSenha: Dados | undefined;
 
-  get nomeFormatado(): string {
-    if (!this.dadosSenha?.nome) return '';
+  /* Formata uma string (nome ou especialidade) de forma abreviada.
+    Se for só uma palavra, retorna ela inteira. 
+    Se tiver mais de uma, retorna a inicial da primeira + o último termo.
+    Clínico Geral -> C. Geral; Maria da Silva Santos -> M. Santos */
+  formatarString(string?: string): string {
+    if (!string) return '';
 
-    //  Separa nome e sobrenome
-    const nomeCompleto: string[] = this.dadosSenha.nome.trim().split(' ');
-    const nome = nomeCompleto[0];
-    const sobrenome = nomeCompleto[1];
+    const stringInteira: string[] = string.trim().split(' ');
+    const qtdPalavras = stringInteira.length;
 
-    if (nome && !sobrenome) return nome; // Caso só haja um nome, retorna ele completo.
+    if (qtdPalavras === 1) return stringInteira[0];
 
-    //  Retorna a primeira letra do primeiro nome e o sobrenome
-    return `${nome[0].toUpperCase()}. ${sobrenome}`;
+    const primeiraPalavra = stringInteira[0];
+    const ultimaPalavra = stringInteira[qtdPalavras - 1];
+
+    return `${primeiraPalavra[0].toUpperCase()}. ${ultimaPalavra}`;
   }
 }

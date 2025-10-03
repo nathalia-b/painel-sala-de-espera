@@ -18,10 +18,10 @@ export class PainelComponent {
   // Nomes de pacientes simulados
   mockPacientes = [
     'Julio Hebert',
-    'Raphaela Lima',
+    'Raphaela Lima Fernandes',
     'Fábio Henrique',
     'Maria Luíza',
-    'Fátima Fernandes',
+    'Fátima Fernandes Silva',
   ];
   mockEspecialidades = ['CG', 'OT']; // Siglas de especialidades simuladas
 
