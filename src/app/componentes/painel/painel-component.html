@@ -6,7 +6,7 @@
     class="transition-all duration-800 ease-in-out absolute transform z-10"
     [ngClass]="{
       'w-[69%] h-[80%] top-[5%] left-[3%] scale-100': !emChamada,
-      'w-[23%] h-[30%] bottom-[2%] right-[2.5%] bottom-10 scale-100 mini': emChamada
+      'w-[23%] h-[28%] bottom-[2%] right-[2.5%] bottom-10 scale-100 mini': emChamada
     }"
   ></app-player>
 
@@ -32,6 +32,10 @@
       <span class="material-icons w-[25px] ml-auto">volume_up</span>
       <span class="material-icons w-[25px] ml-2">crop_free</span>
     </div>
+
+    @if (!chamadaAtual) {
+    <h1 class="text-center mt-[90%] opacity-40">Nenhuma chamada realizada</h1>
+    }
 
     <!-- Título "Senha Atual" exibido apenas se houver uma chamada -->
     @if (chamadaAtual) {
