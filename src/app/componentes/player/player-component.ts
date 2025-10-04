@@ -15,7 +15,6 @@ export class PlayerComponent {
     const url =
       `https://www.youtube.com/embed/${this.videoId}` +
       `?autoplay=1` +
-      `&mute=1` +
       `&loop=1` +
       `&playlist=${this.videoId}`;
 
