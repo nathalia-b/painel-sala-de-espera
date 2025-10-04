@@ -42,6 +42,6 @@ A solução atende aos seguintes requisitos listados nos Critérios de Aceite:
 | **REQ_06** | Atualização do Histórico        | A cada nova chamada, a chamada anterior é adicionada ao topo.                                                                                                              |
 | **REQ_07** | Código Limpo e Organizado       | O código segue a estrutura modular do Angular, utiliza o `CommonModule` e possui **comentários** explicativos sobre a lógica de controle de estado e simulação de dados.   |
 | **REQ_08** | Suporte a Playlist              | O componente do player aceita a configuração de uma playlist do YouTube.                                                                                                   |
-| **REQ_09** | Responsividade                  | O layout é baseado se adapta a diferentes viewports, respeitando o tamanho mínimo de 1366 x 768px.                                                                         |
+| **REQ_09** | Responsividade                  | A aplicação se adapta a diferentes viewports, respeitando o tamanho mínimo de 1366 x 768px.                                                                                |
 
 ---
