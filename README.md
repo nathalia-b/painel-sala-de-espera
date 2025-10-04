@@ -1,59 +1,47 @@
-# PainelEspera
+# Painel Digital
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
+Este projeto consiste no desenvolvimento de um painel digital para gerenciamento do fluxo de pacientes em salas de espera. A aplicação foi desenvolvida seguindo o conceito de **Single Page Application (SPA)**, alternando entre dois estados visuais principais:
 
-## Development server
+1.  **Estado Padrão:** Exibe um vídeo principal, ancorado via YouTube, no centro da tela.
+2.  **Estado em Chamada:** Exibe as informações da senha e local de atendimento em destaque no centro da tela, enquanto o vídeo é reduzido e movido para um canto.
 
-To start a local development server, run:
+**Tecnologias Utilizadas:** HTML, CSS, JavaScript e Angular.
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 1. Instruções para Execução Local
 
-## Code scaffolding
+Este projeto foi gerado a partir do Angular CLI (versão 20.3.3).
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Para iniciar o projeto localmente:
 
-```bash
-ng generate component component-name
-```
+1.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+2.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    ng serve
+    ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+O projeto poderá ser acessado em `http://localhost:4200/`.
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 2. Implementação
 
-To build the project run:
+A solução atende aos seguintes requisitos listados nos Critérios de Aceite:
 
-```bash
-ng build
-```
+| ID         | Critério                        | Detalhes                                                                                                                                                                   |
+| :--------- | :------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **REQ_01** | Aplicação de Página Única (SPA) | O projeto consiste em apenas uma tela, na qual os estados (`emChamada` e `Padrão`) mudam dinamicamente.                                                                    |
+| **REQ_02** | Animação Suave                  | A transição do vídeo e da chamada em destaque utiliza classes de transição do CSS/Tailwind para um movimento que não seja abrupto.                                         |
+| **REQ_03** | Simulação da Chamada            | O evento de nova chamada é disparado através do método `simularNovaChamada()` associado a um botão posicionado no canto superior direito da coluna que exibe as chamadas . |
+| **REQ_04** | Timer de Retorno Automático     | O "Estado de Chamada" é ativado por **15 segundos**, utilizando um `setTimeout()`. Após o timer, a aplicação retorna ao "Estado Padrão".                                   |
+| **REQ_05** | Reprodução de Vídeo             | O player de vídeo está configurado para reprodução em loop e com som ativo.                                                                                                |
+| **REQ_06** | Atualização do Histórico        | A cada nova chamada, a chamada anterior é adicionada ao topo.                                                                                                              |
+| **REQ_07** | Código Limpo e Organizado       | O código segue a estrutura modular do Angular, utiliza o `CommonModule` e possui **comentários** explicativos sobre a lógica de controle de estado e simulação de dados.   |
+| **REQ_08** | Suporte a Playlist              | O componente do player aceita a configuração de uma playlist do YouTube.                                                                                                   |
+| **REQ_09** | Responsividade                  | O layout é baseado se adapta a diferentes viewports, respeitando o tamanho mínimo de 1366 x 768px.                                                                         |
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
