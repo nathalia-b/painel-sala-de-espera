@@ -31,6 +31,15 @@
       <h1 class="font-bold text-xl mb-2">CHAMADAS</h1>
       <span class="material-icons w-[25px] ml-auto">volume_up</span>
       <span class="material-icons w-[25px] ml-2">crop_free</span>
+      <button
+        type="button"
+        id="botaoSimular"
+        title="Realizar nova chamada"
+        class="ml-2 w-7 h-7 text-xs font-medium rounded-sm right-2"
+        (click)="simularNovaChamada()"
+      >
+        <span class="material-icons">notifications</span>
+      </button>
     </div>
 
     @if (!chamadaAtual) {
@@ -50,7 +59,7 @@
     @if (historico.length > 0) {
     <h2 class="font-semibold text-md mb-2 opacity-60">HISTÓRICO DE CHAMADAS</h2>
 
-    <div class="historico mb-4 h-[42%]">
+    <div class="historico mb-4 h-[260px] 2xl:h-[39%] overflow-hidden">
       <!-- Itera sobre o array de chamadas anteriores e exibe uma ficha para cada -->
       @for (senha of historico; track senha) {
       <app-ficha [dadosSenha]="senha"></app-ficha>
@@ -59,12 +68,3 @@
     }
   </div>
 </div>
-
-<button
-  type="button"
-  id="botaoSimular"
-  class="w-6 h-6 text-xs font-medium rounded-sm right-2"
-  (click)="simularNovaChamada()"
->
-  <span class="w-2 h-2 material-icons">notifications</span>
-</button>

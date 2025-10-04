@@ -18,22 +18,15 @@
   overflow: hidden;
 }
 
-.historico {
-  height: 39%;
-  margin-bottom: 10px;
-  overflow: hidden;
-}
-
 #botaoSimular {
-  position: fixed;
-  display: flex;
   color: #fff;
   cursor: pointer;
   bottom: 0;
   background-color: var(--secondary);
-  opacity: 0.7;
+  opacity: 0.9;
   &:hover {
-    transition: 0.3s;
+    transition: 0.5s;
     opacity: 1;
+    background-color: var(--primary);
   }
 }
