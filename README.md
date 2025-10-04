@@ -13,6 +13,9 @@ Este projeto consiste no desenvolvimento de um painel digital para gerenciamento
 
 Este projeto foi gerado a partir do Angular CLI (versão 20.3.3).
 
+**Pré-requisito:**
+- Node.js: v22.20 (mínimo v20.19)
+
 Para iniciar o projeto localmente:
 
 1.  **Instale as dependências:**
@@ -21,7 +24,7 @@ Para iniciar o projeto localmente:
     ```
 2.  **Inicie o servidor de desenvolvimento:**
     ```bash
-    ng serve
+    npm run ng serve
     ```
 
 O projeto poderá ser acessado em `http://localhost:4200/`.
